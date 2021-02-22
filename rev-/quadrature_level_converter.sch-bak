@@ -1,0 +1,939 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "Quadrature Level Converter"
+Date "2020-01-15"
+Rev "-"
+Comp "VT Ground Station"
+Comment1 ""
+Comment2 "creativecommons.org/licenses/by/4.0/"
+Comment3 "License: CC BY 4.0"
+Comment4 "Author: Zach Leffke, KJ4QLP"
+$EndDescr
+$Comp
+L Device:R_US R2
+U 1 1 5E1FED1C
+P 3150 1350
+F 0 "R2" H 3218 1396 50  0000 L CNN
+F 1 "100k" H 3218 1305 50  0000 L CNN
+F 2 "digikey-footprints:0805" V 3190 1340 50  0001 C CNN
+F 3 "~" H 3150 1350 50  0001 C CNN
+	1    3150 1350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C2
+U 1 1 5E202EF2
+P 3150 1650
+F 0 "C2" H 3265 1696 50  0000 L CNN
+F 1 "DNP" H 3265 1605 50  0000 L CNN
+F 2 "digikey-footprints:0805" H 3188 1500 50  0001 C CNN
+F 3 "~" H 3150 1650 50  0001 C CNN
+	1    3150 1650
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+12V #PWR04
+U 1 1 5E2096A0
+P 3150 1200
+F 0 "#PWR04" H 3150 1050 50  0001 C CNN
+F 1 "+12V" H 3165 1373 50  0000 C CNN
+F 2 "" H 3150 1200 50  0001 C CNN
+F 3 "" H 3150 1200 50  0001 C CNN
+	1    3150 1200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR05
+U 1 1 5E209CBC
+P 3150 1800
+F 0 "#PWR05" H 3150 1550 50  0001 C CNN
+F 1 "GND" H 3155 1627 50  0000 C CNN
+F 2 "" H 3150 1800 50  0001 C CNN
+F 3 "" H 3150 1800 50  0001 C CNN
+	1    3150 1800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1600 2950 2050 2950
+Wire Wire Line
+	1600 3050 2050 3050
+Text Label 2050 3050 2    50   ~ 0
+12V_EL_1
+Text Label 2050 2950 2    50   ~ 0
+12V_EL_2
+Wire Wire Line
+	1600 3150 2050 3150
+Wire Wire Line
+	1600 3250 2050 3250
+Text Label 2050 3150 2    50   ~ 0
+12V_AZ_2
+Text Label 2050 3250 2    50   ~ 0
+12V_AZ_1
+Wire Wire Line
+	3150 1500 2500 1500
+Connection ~ 3150 1500
+$Comp
+L Device:R_US R3
+U 1 1 5E21BD00
+P 3150 2450
+F 0 "R3" H 3218 2496 50  0000 L CNN
+F 1 "100k" H 3218 2405 50  0000 L CNN
+F 2 "digikey-footprints:0805" V 3190 2440 50  0001 C CNN
+F 3 "~" H 3150 2450 50  0001 C CNN
+	1    3150 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+12V #PWR06
+U 1 1 5E21C4F1
+P 3150 2300
+F 0 "#PWR06" H 3150 2150 50  0001 C CNN
+F 1 "+12V" H 3165 2473 50  0000 C CNN
+F 2 "" H 3150 2300 50  0001 C CNN
+F 3 "" H 3150 2300 50  0001 C CNN
+	1    3150 2300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C3
+U 1 1 5E21CB6E
+P 3150 2750
+F 0 "C3" H 3265 2796 50  0000 L CNN
+F 1 "DNP" H 3265 2705 50  0000 L CNN
+F 2 "digikey-footprints:0805" H 3188 2600 50  0001 C CNN
+F 3 "~" H 3150 2750 50  0001 C CNN
+	1    3150 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR07
+U 1 1 5E21D193
+P 3150 2900
+F 0 "#PWR07" H 3150 2650 50  0001 C CNN
+F 1 "GND" H 3155 2727 50  0000 C CNN
+F 2 "" H 3150 2900 50  0001 C CNN
+F 3 "" H 3150 2900 50  0001 C CNN
+	1    3150 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Transistor_FET:DMG3414U Q1
+U 1 1 5E228156
+P 3950 1500
+F 0 "Q1" H 4154 1546 50  0000 L CNN
+F 1 "DMG3414U" H 4154 1455 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 4150 1425 50  0001 L CIN
+F 3 "http://www.diodes.com/assets/Datasheets/ds31739.pdf" H 3950 1500 50  0001 L CNN
+	1    3950 1500
+	1    0    0    -1  
+$EndComp
+$Comp
+L dk_Optoisolators-Transistor-Photovoltaic-Output:ILD207T U3
+U 1 1 5E22CA22
+P 5350 1850
+F 0 "U3" H 5350 2337 60  0000 C CNN
+F 1 "ILD207T" H 5350 2231 60  0000 C CNN
+F 2 "digikey-footprints:SOIC-8_W3.9mm" H 5550 2050 60  0001 L CNN
+F 3 "http://www.vishay.com/docs/83647/ild205t.pdf" V 5550 2150 60  0001 L CNN
+F 4 "751-1310-1-ND" H 5550 2250 60  0001 L CNN "Digi-Key_PN"
+F 5 "ILD207T" H 5550 2350 60  0001 L CNN "MPN"
+F 6 "Isolators" H 5550 2450 60  0001 L CNN "Category"
+F 7 "Optoisolators - Transistor, Photovoltaic Output" H 5550 2550 60  0001 L CNN "Family"
+F 8 "http://www.vishay.com/docs/83647/ild205t.pdf" H 5550 2650 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/vishay-semiconductor-opto-division/ILD207T/751-1310-1-ND/1731615" H 5550 2750 60  0001 L CNN "DK_Detail_Page"
+F 10 "OPTOISOLTR 4KV 2CH TRANS 8-SOIC" H 5550 2850 60  0001 L CNN "Description"
+F 11 "Vishay Semiconductor Opto Division" H 5550 2950 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 5550 3050 60  0001 L CNN "Status"
+	1    5350 1850
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR014
+U 1 1 5E22F34D
+P 4050 1700
+F 0 "#PWR014" H 4050 1450 50  0001 C CNN
+F 1 "GND" H 4055 1527 50  0000 C CNN
+F 2 "" H 4050 1700 50  0001 C CNN
+F 3 "" H 4050 1700 50  0001 C CNN
+	1    4050 1700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_US R6
+U 1 1 5E22FF24
+P 4400 1300
+F 0 "R6" V 4195 1300 50  0000 C CNN
+F 1 "1k" V 4286 1300 50  0000 C CNN
+F 2 "digikey-footprints:0805" V 4440 1290 50  0001 C CNN
+F 3 "~" H 4400 1300 50  0001 C CNN
+	1    4400 1300
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3750 1500 3150 1500
+$Comp
+L power:+5V #PWR023
+U 1 1 5E2343DB
+P 5800 1450
+F 0 "#PWR023" H 5800 1300 50  0001 C CNN
+F 1 "+5V" H 5815 1623 50  0000 C CNN
+F 2 "" H 5800 1450 50  0001 C CNN
+F 3 "" H 5800 1450 50  0001 C CNN
+	1    5800 1450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Transistor_FET:DMG3414U Q2
+U 1 1 5E234DAA
+P 3950 2600
+F 0 "Q2" H 4154 2646 50  0000 L CNN
+F 1 "DMG3414U" H 4154 2555 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 4150 2525 50  0001 L CIN
+F 3 "http://www.diodes.com/assets/Datasheets/ds31739.pdf" H 3950 2600 50  0001 L CNN
+	1    3950 2600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3750 2600 3150 2600
+Connection ~ 3150 2600
+Wire Wire Line
+	3150 2600 2500 2600
+$Comp
+L power:GND #PWR015
+U 1 1 5E23FB90
+P 4050 2800
+F 0 "#PWR015" H 4050 2550 50  0001 C CNN
+F 1 "GND" H 4055 2627 50  0000 C CNN
+F 2 "" H 4050 2800 50  0001 C CNN
+F 3 "" H 4050 2800 50  0001 C CNN
+	1    4050 2800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_US R7
+U 1 1 5E241CF7
+P 4400 2400
+F 0 "R7" V 4195 2400 50  0000 C CNN
+F 1 "1k" V 4286 2400 50  0000 C CNN
+F 2 "digikey-footprints:0805" V 4440 2390 50  0001 C CNN
+F 3 "~" H 4400 2400 50  0001 C CNN
+	1    4400 2400
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5050 1650 4950 1650
+Wire Wire Line
+	4950 1650 4950 1550
+Wire Wire Line
+	5050 1850 4950 1850
+Wire Wire Line
+	4950 1850 4950 1650
+Connection ~ 4950 1650
+Wire Wire Line
+	4050 1300 4250 1300
+Wire Wire Line
+	4700 1750 5050 1750
+Wire Wire Line
+	4050 2400 4250 2400
+Wire Wire Line
+	4550 2400 4700 2400
+$Comp
+L power:+12V #PWR021
+U 1 1 5E247A1B
+P 4950 1550
+F 0 "#PWR021" H 4950 1400 50  0001 C CNN
+F 1 "+12V" H 4965 1723 50  0000 C CNN
+F 2 "" H 4950 1550 50  0001 C CNN
+F 3 "" H 4950 1550 50  0001 C CNN
+	1    4950 1550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4550 1300 4700 1300
+Wire Wire Line
+	4700 1300 4700 1750
+Wire Wire Line
+	4700 2400 4700 1950
+Wire Wire Line
+	4700 1950 5050 1950
+$Comp
+L Device:C C4
+U 1 1 5E255A21
+P 3150 3850
+F 0 "C4" H 3265 3896 50  0000 L CNN
+F 1 "DNP" H 3265 3805 50  0000 L CNN
+F 2 "digikey-footprints:0805" H 3188 3700 50  0001 C CNN
+F 3 "~" H 3150 3850 50  0001 C CNN
+	1    3150 3850
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR09
+U 1 1 5E2563A5
+P 3150 4000
+F 0 "#PWR09" H 3150 3750 50  0001 C CNN
+F 1 "GND" H 3155 3827 50  0000 C CNN
+F 2 "" H 3150 4000 50  0001 C CNN
+F 3 "" H 3150 4000 50  0001 C CNN
+	1    3150 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_US R4
+U 1 1 5E2568AC
+P 3150 3550
+F 0 "R4" H 3218 3596 50  0000 L CNN
+F 1 "100k" H 3218 3505 50  0000 L CNN
+F 2 "digikey-footprints:0805" V 3190 3540 50  0001 C CNN
+F 3 "~" H 3150 3550 50  0001 C CNN
+	1    3150 3550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+12V #PWR08
+U 1 1 5E25724E
+P 3150 3400
+F 0 "#PWR08" H 3150 3250 50  0001 C CNN
+F 1 "+12V" H 3165 3573 50  0000 C CNN
+F 2 "" H 3150 3400 50  0001 C CNN
+F 3 "" H 3150 3400 50  0001 C CNN
+	1    3150 3400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Transistor_FET:DMG3414U Q3
+U 1 1 5E258BC5
+P 3950 3700
+F 0 "Q3" H 4154 3746 50  0000 L CNN
+F 1 "DMG3414U" H 4154 3655 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 4150 3625 50  0001 L CIN
+F 3 "http://www.diodes.com/assets/Datasheets/ds31739.pdf" H 3950 3700 50  0001 L CNN
+	1    3950 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_US R8
+U 1 1 5E25CB16
+P 4400 3500
+F 0 "R8" V 4195 3500 50  0000 C CNN
+F 1 "1k" V 4286 3500 50  0000 C CNN
+F 2 "digikey-footprints:0805" V 4440 3490 50  0001 C CNN
+F 3 "~" H 4400 3500 50  0001 C CNN
+	1    4400 3500
+	0    1    1    0   
+$EndComp
+$Comp
+L dk_Optoisolators-Transistor-Photovoltaic-Output:ILD207T U2
+U 1 1 5E25D475
+P 5300 3600
+F 0 "U2" H 5300 4087 60  0000 C CNN
+F 1 "ILD207T" H 5300 3981 60  0000 C CNN
+F 2 "digikey-footprints:SOIC-8_W3.9mm" H 5500 3800 60  0001 L CNN
+F 3 "http://www.vishay.com/docs/83647/ild205t.pdf" V 5500 3900 60  0001 L CNN
+F 4 "751-1310-1-ND" H 5500 4000 60  0001 L CNN "Digi-Key_PN"
+F 5 "ILD207T" H 5500 4100 60  0001 L CNN "MPN"
+F 6 "Isolators" H 5500 4200 60  0001 L CNN "Category"
+F 7 "Optoisolators - Transistor, Photovoltaic Output" H 5500 4300 60  0001 L CNN "Family"
+F 8 "http://www.vishay.com/docs/83647/ild205t.pdf" H 5500 4400 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/vishay-semiconductor-opto-division/ILD207T/751-1310-1-ND/1731615" H 5500 4500 60  0001 L CNN "DK_Detail_Page"
+F 10 "OPTOISOLTR 4KV 2CH TRANS 8-SOIC" H 5500 4600 60  0001 L CNN "Description"
+F 11 "Vishay Semiconductor Opto Division" H 5500 4700 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 5500 4800 60  0001 L CNN "Status"
+	1    5300 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+12V #PWR010
+U 1 1 5E25F8C5
+P 3150 4450
+F 0 "#PWR010" H 3150 4300 50  0001 C CNN
+F 1 "+12V" H 3165 4623 50  0000 C CNN
+F 2 "" H 3150 4450 50  0001 C CNN
+F 3 "" H 3150 4450 50  0001 C CNN
+	1    3150 4450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_US R5
+U 1 1 5E25FC8C
+P 3150 4600
+F 0 "R5" H 3218 4646 50  0000 L CNN
+F 1 "100k" H 3218 4555 50  0000 L CNN
+F 2 "digikey-footprints:0805" V 3190 4590 50  0001 C CNN
+F 3 "~" H 3150 4600 50  0001 C CNN
+	1    3150 4600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C5
+U 1 1 5E2603DC
+P 3150 4900
+F 0 "C5" H 3265 4946 50  0000 L CNN
+F 1 "DNP" H 3265 4855 50  0000 L CNN
+F 2 "digikey-footprints:0805" H 3188 4750 50  0001 C CNN
+F 3 "~" H 3150 4900 50  0001 C CNN
+	1    3150 4900
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR011
+U 1 1 5E260956
+P 3150 5050
+F 0 "#PWR011" H 3150 4800 50  0001 C CNN
+F 1 "GND" H 3155 4877 50  0000 C CNN
+F 2 "" H 3150 5050 50  0001 C CNN
+F 3 "" H 3150 5050 50  0001 C CNN
+	1    3150 5050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Transistor_FET:DMG3414U Q4
+U 1 1 5E260E5D
+P 3950 4750
+F 0 "Q4" H 4154 4796 50  0000 L CNN
+F 1 "DMG3414U" H 4154 4705 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 4150 4675 50  0001 L CIN
+F 3 "http://www.diodes.com/assets/Datasheets/ds31739.pdf" H 3950 4750 50  0001 L CNN
+	1    3950 4750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_US R9
+U 1 1 5E26448C
+P 4400 4550
+F 0 "R9" V 4195 4550 50  0000 C CNN
+F 1 "1k" V 4286 4550 50  0000 C CNN
+F 2 "digikey-footprints:0805" V 4440 4540 50  0001 C CNN
+F 3 "~" H 4400 4550 50  0001 C CNN
+	1    4400 4550
+	0    1    1    0   
+$EndComp
+$Comp
+L power:+12V #PWR020
+U 1 1 5E264E22
+P 4900 3250
+F 0 "#PWR020" H 4900 3100 50  0001 C CNN
+F 1 "+12V" H 4915 3423 50  0000 C CNN
+F 2 "" H 4900 3250 50  0001 C CNN
+F 3 "" H 4900 3250 50  0001 C CNN
+	1    4900 3250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3750 3700 3150 3700
+Connection ~ 3150 3700
+Wire Wire Line
+	3150 3700 2500 3700
+Wire Wire Line
+	3150 4750 2500 4750
+Connection ~ 3150 4750
+Wire Wire Line
+	3150 4750 3750 4750
+Wire Wire Line
+	4050 3500 4250 3500
+Wire Wire Line
+	4050 4550 4250 4550
+Wire Wire Line
+	5000 3700 4700 3700
+Wire Wire Line
+	4700 3700 4700 4550
+Wire Wire Line
+	4700 4550 4550 4550
+Wire Wire Line
+	5000 3600 4900 3600
+Wire Wire Line
+	4900 3600 4900 3400
+Wire Wire Line
+	5000 3400 4900 3400
+Connection ~ 4900 3400
+Wire Wire Line
+	4900 3400 4900 3250
+$Comp
+L power:GND #PWR016
+U 1 1 5E26EA95
+P 4050 3900
+F 0 "#PWR016" H 4050 3650 50  0001 C CNN
+F 1 "GND" H 4055 3727 50  0000 C CNN
+F 2 "" H 4050 3900 50  0001 C CNN
+F 3 "" H 4050 3900 50  0001 C CNN
+	1    4050 3900
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR017
+U 1 1 5E26F557
+P 4050 4950
+F 0 "#PWR017" H 4050 4700 50  0001 C CNN
+F 1 "GND" H 4055 4777 50  0000 C CNN
+F 2 "" H 4050 4950 50  0001 C CNN
+F 3 "" H 4050 4950 50  0001 C CNN
+	1    4050 4950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5800 1450 5800 1650
+Wire Wire Line
+	5800 1650 5650 1650
+Wire Wire Line
+	5650 1850 5800 1850
+Wire Wire Line
+	5800 1850 5800 1650
+Connection ~ 5800 1650
+$Comp
+L power:+5V #PWR022
+U 1 1 5E271783
+P 5750 3200
+F 0 "#PWR022" H 5750 3050 50  0001 C CNN
+F 1 "+5V" H 5765 3373 50  0000 C CNN
+F 2 "" H 5750 3200 50  0001 C CNN
+F 3 "" H 5750 3200 50  0001 C CNN
+	1    5750 3200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5750 3200 5750 3400
+Wire Wire Line
+	5750 3400 5600 3400
+Wire Wire Line
+	5600 3600 5750 3600
+Wire Wire Line
+	5750 3600 5750 3400
+Connection ~ 5750 3400
+$Comp
+L Connector:Conn_01x04_Male J3
+U 1 1 5E273CBA
+P 7350 2950
+F 0 "J3" H 7322 2924 50  0000 R CNN
+F 1 "QUAD_5V" H 7322 2833 50  0000 R CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 7350 2950 50  0001 C CNN
+F 3 "~" H 7350 2950 50  0001 C CNN
+	1    7350 2950
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	5650 1750 6100 1750
+Wire Wire Line
+	5650 1950 5950 1950
+Wire Wire Line
+	5600 3500 6100 3500
+Wire Wire Line
+	5600 3700 5900 3700
+Text Label 6650 1750 2    50   ~ 0
+5V_EL_2
+Text Label 6650 2350 2    50   ~ 0
+5V_EL_1
+Text Label 6650 3500 2    50   ~ 0
+5V_AZ_2
+Text Label 6650 4100 2    50   ~ 0
+5V_AZ_1
+Wire Wire Line
+	7150 2850 6550 2850
+Wire Wire Line
+	7150 2950 6550 2950
+Wire Wire Line
+	7150 3050 6550 3050
+Wire Wire Line
+	7150 3150 6550 3150
+Text Label 6550 2850 0    50   ~ 0
+5V_EL_2
+Text Label 6550 2950 0    50   ~ 0
+5V_EL_1
+Text Label 6550 3050 0    50   ~ 0
+5V_AZ_2
+Text Label 6550 3150 0    50   ~ 0
+5V_AZ_1
+Text Label 2500 1500 0    50   ~ 0
+12V_EL_2
+Text Label 2500 2600 0    50   ~ 0
+12V_EL_1
+Text Label 2500 3700 0    50   ~ 0
+12V_AZ_2
+Text Label 2500 4750 0    50   ~ 0
+12V_AZ_1
+$Comp
+L Device:R_US R11
+U 1 1 5E2875CB
+P 6100 2500
+F 0 "R11" H 6168 2546 50  0000 L CNN
+F 1 "10k" H 6168 2455 50  0000 L CNN
+F 2 "digikey-footprints:0805" V 6140 2490 50  0001 C CNN
+F 3 "~" H 6100 2500 50  0001 C CNN
+	1    6100 2500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5950 1950 5950 2350
+$Comp
+L Device:R_US R10
+U 1 1 5E291F23
+P 6100 1900
+F 0 "R10" H 6168 1946 50  0000 L CNN
+F 1 "10k" H 6168 1855 50  0000 L CNN
+F 2 "digikey-footprints:0805" V 6140 1890 50  0001 C CNN
+F 3 "~" H 6100 1900 50  0001 C CNN
+	1    6100 1900
+	1    0    0    -1  
+$EndComp
+Connection ~ 6100 1750
+Wire Wire Line
+	6100 1750 6650 1750
+$Comp
+L power:GND #PWR024
+U 1 1 5E29293F
+P 6100 2050
+F 0 "#PWR024" H 6100 1800 50  0001 C CNN
+F 1 "GND" H 6105 1877 50  0000 C CNN
+F 2 "" H 6100 2050 50  0001 C CNN
+F 3 "" H 6100 2050 50  0001 C CNN
+	1    6100 2050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5950 2350 6100 2350
+Connection ~ 6100 2350
+Wire Wire Line
+	6100 2350 6650 2350
+$Comp
+L power:GND #PWR025
+U 1 1 5E297E01
+P 6100 2650
+F 0 "#PWR025" H 6100 2400 50  0001 C CNN
+F 1 "GND" H 6105 2477 50  0000 C CNN
+F 2 "" H 6100 2650 50  0001 C CNN
+F 3 "" H 6100 2650 50  0001 C CNN
+	1    6100 2650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4550 3500 5000 3500
+$Comp
+L Device:R_US R12
+U 1 1 5E2A1109
+P 6100 3650
+F 0 "R12" H 6168 3696 50  0000 L CNN
+F 1 "10k" H 6168 3605 50  0000 L CNN
+F 2 "digikey-footprints:0805" V 6140 3640 50  0001 C CNN
+F 3 "~" H 6100 3650 50  0001 C CNN
+	1    6100 3650
+	1    0    0    -1  
+$EndComp
+Connection ~ 6100 3500
+Wire Wire Line
+	6100 3500 6650 3500
+$Comp
+L power:GND #PWR026
+U 1 1 5E2A233D
+P 6100 3800
+F 0 "#PWR026" H 6100 3550 50  0001 C CNN
+F 1 "GND" H 6105 3627 50  0000 C CNN
+F 2 "" H 6100 3800 50  0001 C CNN
+F 3 "" H 6100 3800 50  0001 C CNN
+	1    6100 3800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5900 3700 5900 4100
+Wire Wire Line
+	5900 4100 6100 4100
+$Comp
+L Device:R_US R13
+U 1 1 5E2A4616
+P 6100 4250
+F 0 "R13" H 6168 4296 50  0000 L CNN
+F 1 "10k" H 6168 4205 50  0000 L CNN
+F 2 "digikey-footprints:0805" V 6140 4240 50  0001 C CNN
+F 3 "~" H 6100 4250 50  0001 C CNN
+	1    6100 4250
+	1    0    0    -1  
+$EndComp
+Connection ~ 6100 4100
+Wire Wire Line
+	6100 4100 6650 4100
+$Comp
+L power:GND #PWR027
+U 1 1 5E2A5414
+P 6100 4400
+F 0 "#PWR027" H 6100 4150 50  0001 C CNN
+F 1 "GND" H 6105 4227 50  0000 C CNN
+F 2 "" H 6100 4400 50  0001 C CNN
+F 3 "" H 6100 4400 50  0001 C CNN
+	1    6100 4400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Regulator_Linear:SPX3819M5-L-5-0 U1
+U 1 1 5E2ACFEA
+P 3400 6150
+F 0 "U1" H 3400 6492 50  0000 C CNN
+F 1 "SPX3819M5-L-5-0" H 3400 6401 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-5" H 3400 6475 50  0001 C CNN
+F 3 "https://www.exar.com/content/document.ashx?id=22106&languageid=1033&type=Datasheet&partnumber=SPX3819&filename=SPX3819.pdf&part=SPX3819" H 3400 6150 50  0001 C CNN
+	1    3400 6150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x02_Male J1
+U 1 1 5E2B3B9A
+P 1350 6050
+F 0 "J1" H 1458 6231 50  0000 C CNN
+F 1 "POWER" H 1458 6140 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 1350 6050 50  0001 C CNN
+F 3 "~" H 1350 6050 50  0001 C CNN
+	1    1350 6050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C1
+U 1 1 5E2B45A6
+P 2450 6200
+F 0 "C1" H 2565 6246 50  0000 L CNN
+F 1 "10uF" H 2565 6155 50  0000 L CNN
+F 2 "digikey-footprints:0805" H 2488 6050 50  0001 C CNN
+F 3 "~" H 2450 6200 50  0001 C CNN
+	1    2450 6200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_US R1
+U 1 1 5E2B53EF
+P 2800 6200
+F 0 "R1" H 2732 6154 50  0000 R CNN
+F 1 "100k" H 2732 6245 50  0000 R CNN
+F 2 "digikey-footprints:0805" V 2840 6190 50  0001 C CNN
+F 3 "~" H 2800 6200 50  0001 C CNN
+	1    2800 6200
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:C C6
+U 1 1 5E2B72A5
+P 3800 6300
+F 0 "C6" H 3915 6346 50  0000 L CNN
+F 1 "1uF" H 3915 6255 50  0000 L CNN
+F 2 "digikey-footprints:0805" H 3838 6150 50  0001 C CNN
+F 3 "~" H 3800 6300 50  0001 C CNN
+	1    3800 6300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C7
+U 1 1 5E2B8067
+P 4450 6300
+F 0 "C7" H 4565 6346 50  0000 L CNN
+F 1 "1uF" H 4565 6255 50  0000 L CNN
+F 2 "digikey-footprints:0805" H 4488 6150 50  0001 C CNN
+F 3 "~" H 4450 6300 50  0001 C CNN
+	1    4450 6300
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR03
+U 1 1 5E2B8E15
+P 2450 6350
+F 0 "#PWR03" H 2450 6100 50  0001 C CNN
+F 1 "GND" H 2455 6177 50  0000 C CNN
+F 2 "" H 2450 6350 50  0001 C CNN
+F 3 "" H 2450 6350 50  0001 C CNN
+	1    2450 6350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR012
+U 1 1 5E2B9A13
+P 3400 6450
+F 0 "#PWR012" H 3400 6200 50  0001 C CNN
+F 1 "GND" H 3405 6277 50  0000 C CNN
+F 2 "" H 3400 6450 50  0001 C CNN
+F 3 "" H 3400 6450 50  0001 C CNN
+	1    3400 6450
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR013
+U 1 1 5E2BA591
+P 3800 6450
+F 0 "#PWR013" H 3800 6200 50  0001 C CNN
+F 1 "GND" H 3805 6277 50  0000 C CNN
+F 2 "" H 3800 6450 50  0001 C CNN
+F 3 "" H 3800 6450 50  0001 C CNN
+	1    3800 6450
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR019
+U 1 1 5E2BA879
+P 4450 6450
+F 0 "#PWR019" H 4450 6200 50  0001 C CNN
+F 1 "GND" H 4455 6277 50  0000 C CNN
+F 2 "" H 4450 6450 50  0001 C CNN
+F 3 "" H 4450 6450 50  0001 C CNN
+	1    4450 6450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3100 6050 2800 6050
+Connection ~ 2800 6050
+Wire Wire Line
+	3100 6150 3100 6350
+Wire Wire Line
+	3100 6350 2800 6350
+Connection ~ 2450 6050
+$Comp
+L power:GND #PWR02
+U 1 1 5E2C9C59
+P 2150 6350
+F 0 "#PWR02" H 2150 6100 50  0001 C CNN
+F 1 "GND" H 2155 6177 50  0000 C CNN
+F 2 "" H 2150 6350 50  0001 C CNN
+F 3 "" H 2150 6350 50  0001 C CNN
+	1    2150 6350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1550 6150 2000 6150
+Wire Wire Line
+	2150 6150 2150 6350
+Wire Wire Line
+	2450 6050 2800 6050
+Wire Wire Line
+	3700 6150 3800 6150
+Wire Wire Line
+	4450 6050 4450 6150
+Wire Wire Line
+	4450 6050 4450 5850
+Connection ~ 4450 6050
+Wire Wire Line
+	2150 6050 2150 5850
+Connection ~ 2150 6050
+Wire Wire Line
+	2150 6050 2450 6050
+$Comp
+L power:+12V #PWR01
+U 1 1 5E2E064E
+P 2150 5850
+F 0 "#PWR01" H 2150 5700 50  0001 C CNN
+F 1 "+12V" H 2165 6023 50  0000 C CNN
+F 2 "" H 2150 5850 50  0001 C CNN
+F 3 "" H 2150 5850 50  0001 C CNN
+	1    2150 5850
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR018
+U 1 1 5E2E1411
+P 4450 5850
+F 0 "#PWR018" H 4450 5700 50  0001 C CNN
+F 1 "+5V" H 4465 6023 50  0000 C CNN
+F 2 "" H 4450 5850 50  0001 C CNN
+F 3 "" H 4450 5850 50  0001 C CNN
+	1    4450 5850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:TestPoint TP1
+U 1 1 5E2E3C27
+P 2000 5900
+F 0 "TP1" H 1800 6050 50  0000 L CNN
+F 1 "TestPoint" H 1600 5950 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Pad_D4.0mm" H 2200 5900 50  0001 C CNN
+F 3 "~" H 2200 5900 50  0001 C CNN
+	1    2000 5900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:TestPoint TP2
+U 1 1 5E2E73FC
+P 2000 6200
+F 0 "TP2" H 1943 6226 50  0000 R CNN
+F 1 "TestPoint" H 1943 6317 50  0000 R CNN
+F 2 "TestPoint:TestPoint_Pad_D4.0mm" H 2200 6200 50  0001 C CNN
+F 3 "~" H 2200 6200 50  0001 C CNN
+	1    2000 6200
+	1    0    0    1   
+$EndComp
+Wire Wire Line
+	2000 6150 2000 6200
+Connection ~ 2000 6150
+Wire Wire Line
+	2000 6150 2150 6150
+$Comp
+L Connector:TestPoint TP4
+U 1 1 5E2EC7F2
+P 4350 5900
+F 0 "TP4" H 4550 6050 50  0000 R CNN
+F 1 "TestPoint" H 4750 5950 50  0000 R CNN
+F 2 "TestPoint:TestPoint_Pad_D4.0mm" H 4550 5900 50  0001 C CNN
+F 3 "~" H 4550 5900 50  0001 C CNN
+	1    4350 5900
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	4350 5900 4350 6050
+Connection ~ 4350 6050
+Wire Wire Line
+	4350 6050 4450 6050
+Wire Wire Line
+	3700 6050 4350 6050
+Wire Wire Line
+	1550 6050 2000 6050
+Wire Wire Line
+	2000 5900 2000 6050
+Connection ~ 2000 6050
+Wire Wire Line
+	2000 6050 2150 6050
+$Comp
+L Connector:TestPoint TP3
+U 1 1 5E312CC6
+P 4300 6450
+F 0 "TP3" H 4500 6600 50  0000 R CNN
+F 1 "TestPoint" H 4700 6500 50  0000 R CNN
+F 2 "TestPoint:TestPoint_Pad_D4.0mm" H 4500 6450 50  0001 C CNN
+F 3 "~" H 4500 6450 50  0001 C CNN
+	1    4300 6450
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4450 6450 4300 6450
+Connection ~ 4450 6450
+$Comp
+L Connector:Conn_01x06_Male J2
+U 1 1 5E209B78
+P 1400 3150
+F 0 "J2" H 1508 3531 50  0000 C CNN
+F 1 "QUAD_12V" H 1508 3440 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical" H 1400 3150 50  0001 C CNN
+F 3 "~" H 1400 3150 50  0001 C CNN
+	1    1400 3150
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+12V #PWR028
+U 1 1 5E21552D
+P 2200 3350
+F 0 "#PWR028" H 2200 3200 50  0001 C CNN
+F 1 "+12V" H 2215 3523 50  0000 C CNN
+F 2 "" H 2200 3350 50  0001 C CNN
+F 3 "" H 2200 3350 50  0001 C CNN
+	1    2200 3350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR029
+U 1 1 5E2163B7
+P 2200 3450
+F 0 "#PWR029" H 2200 3200 50  0001 C CNN
+F 1 "GND" H 2205 3277 50  0000 C CNN
+F 2 "" H 2200 3450 50  0001 C CNN
+F 3 "" H 2200 3450 50  0001 C CNN
+	1    2200 3450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1600 3350 2200 3350
+Wire Wire Line
+	2200 3450 1600 3450
+$EndSCHEMATC
